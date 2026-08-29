@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Doky's Hub - Pizzería Artesanal</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../assets/style/styles.css">
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-2">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Header"
+                    style="width: 80px; height: 80px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDoky">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navDoky">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Categorías</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="categorias.html">Clásicas</a></li>
+                            <li><a class="dropdown-item" href="categorias.html">Especiales</a></li>
+                            <li><a class="dropdown-item" href="categorias.html">Bebidas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacto.html">Contacto</a>
+                    </li>
+                    <li class="nav-item d-none">
+                        <a class="nav-link text-warning" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#modalCarrito">
+                        <i class="bi bi-cart3"></i> Carrito
+                    </button>
+                    <a href="login.html" class="btn btn-outline-light btn-sm">Ingresar</a>
+                    <a href="registro.html" class="btn btn-main btn-sm">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- 1. SECCIÓN PRINCIPAL (CLÁSICAS) -->
+        <section class="container my-5" id="principal">
+            <h2 class="text-start fw-bold mb-4">Pizzas Clásicas</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Americana" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Americana</h5>
+                            <p class="card-text text-muted small">Abundante queso mozzarella fundido, jamón inglés
+                                seleccionado y salsa pomodoro.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 32.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Pepperoni" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Pepperoni</h5>
+                            <p class="card-text text-muted small">Capa generosa de queso mozzarella, salsa pomodoro y
+                                rodajas de pepperoni crocante.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 36.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Hawaiana" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Hawaiana</h5>
+                            <p class="card-text text-muted small">Queso mozzarella, trozos de jamón inglés y piña dulce
+                                caramelizada al horno.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 35.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5" id="especial">
+            <h2 class="text-start fw-bold mb-4">Pizzas Especiales & Gourmet</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Doky House Special" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Doky House Special</h5>
+                            <p class="card-text text-muted small">Jamón serrano curado, champiñones al ajillo, queso
+                                gorgonzola y reducción balsámica.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 44.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Carnívora Suprema" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Carnívora Suprema</h5>
+                            <p class="card-text text-muted small">Carne sazonada, tocino ahumado crocante, salchicha
+                                italiana, pepperoni y mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 42.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Cuatro Quesos Artesanal"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Cuatro Quesos</h5>
+                            <p class="card-text text-muted small">Mozzarella de búfala, provolone ahumado, queso azul
+                                cremoso y parmesano madurado.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 40.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5" id="peruanas">
+            <h2 class="text-start fw-bold mb-4">Sabor Peruano (Fusión)</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Lomo Saltado" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Lomo Saltado</h5>
+                            <p class="card-text text-muted small">Tiras de lomo fino al wok, cebolla morada, tomate, ají
+                                amarillo y queso mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 46.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Ají de Gallina" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Ají de Gallina</h5>
+                            <p class="card-text text-muted small">Crema casera de ají de gallina, hebras de pollo
+                                tierno, aceituna botija y mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 38.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pizza Huachana" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pizza Huachana</h5>
+                            <p class="card-text text-muted small">Salchicha huachana dorada artesanal, mozzarella, huevo
+                                de codorniz y cebollita china.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 39.00</span>
+                                <a href="detalle-pizza.html" class="btn btn-main btn-sm">Ver Detalle</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5" id="entradas">
+            <h2 class="text-start fw-bold mb-4">Entradas & Acompañamientos</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pan al Ajo Clásico" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pan al Ajo Clásico</h5>
+                            <p class="card-text text-muted small">Baguette artesanal horneado con mantequilla de ajo y
+                                finas hierbas (6 unidades).</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 12.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Pan al Ajo Especial Doky"
+                            style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Pan al Ajo Especial</h5>
+                            <p class="card-text text-muted small">Pan baguette bañado en mantequilla de ajo y gratinado
+                                con abundante mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 16.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Tequeños Rellenos" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Tequeños de Queso</h5>
+                            <p class="card-text text-muted small">8 crujientes tequeños rellenos de queso andino
+                                acompañados con guacamole casero.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 18.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container my-5" id="bebidas">
+            <h2 class="text-start fw-bold mb-4">Bebidas</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Gaseosa 1.5L" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Gaseosas 1.5 L</h5>
+                            <p class="card-text text-muted small">Inca Kola o Coca-Cola en botella de 1.5 Litros,
+                                servidas bien heladas.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 10.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Chicha Morada" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Chicha Morada (1 L)</h5>
+                            <p class="card-text text-muted small">Elaborada artesanalmente con maíz morado, piña,
+                                membrillo, manzana y toque de canela.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 12.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src=""
+                            class="card-img-top" alt="Cerveza Artesanal" style="height: 200px; object-fit: cover;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">Cerveza Artesanal</h5>
+                            <p class="card-text text-muted small">Botella personal de 330 ml (Variedades: IPA, Red Ale o
+                                Trigo artesanal).</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="fw-bold fs-5">S/ 14.00</span>
+                                <button class="btn btn-main btn-sm">Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div class="modal fade" id="modalCarrito" tabindex="-1">
+        <div class="modal-dialog modal-dialog-end m-0 h-100">
+            <div class="modal-content h-100 rounded-0 border-0">
+                <div class="modal-header bg-dark text-white rounded-0">
+                    <h5 class="modal-title fw-bold" id="modalCarritoLabel">Mis productos</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+
+                <div class="modal-body d-flex flex-column">
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between broder-bottom py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="" alt="Americana" class="rounded modal-cart">
+                                <div>
+                                    <h6 class="mb-0 fw-bold fs-6">Pizza Americana</h6>
+                                    <small class="text-muted">Familiar - S/ 32.00</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="fw-bold d-block">S/ 32.00</span>
+                                <button class="btn btn-sm text-danger p-0 border-0"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between broder-bottom py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="" alt="Pepperoni" class="rounded img-modal-cart">
+                                <div>
+                                    <h6 class="mb-0 fw-bold fs-6">Pizza Pepperoni</h6>
+                                    <small class="text-muted">Mediana - S/ 36.00</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="fw-bold d-block">S/ 36.00</span>
+                                <button class="btn btn-sm text-danger p-0 border-0"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-3">
+                    <div class="border-top pt-3 mt-auto">
+                        <div class="d-flex justify-content-between mb-1 text-muted small">
+                            <span>Subtotal:</span>
+                            <span>S/ 68.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 fw-bold fs-5">
+                            <span>Total a pagar:</span>
+                            <span class="text-danger">S/ 68.00</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="checkout.html" class="btn btn-main">Procesar Pedido</a>
+                            <button type="button" class="btn btn-outline-secondary btn-sm"
+                                data-bs-dismiss="modal">Seguir comprando</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Footer"
+                        style="width: 80px; height: 80px;">
+                    <p class="small text-secondary">Pizzería artesanal comprometida con el buen sabor y entregas
+                        rápidas.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h6>Menú</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-1">
+                        <li><a href="menu.html">Tradicionales</a></li>
+                        <li><a href="menu.html">Especiales</a></li>
+                        <li><a href="menu.html">Bebidas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h6>Atención</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-1">
+                        <li><a href="contacto.html">Contacto</a></li>
+                        <li><a href="contacto.html">Preguntas Frecuentes</a></li>
+                        <li><a href="contacto.html">Zonas de Reparto</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <p class="text-center small mb-0 text-secondary">
+                &copy; 2026 Little Doky's Hub. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
