@@ -46,6 +46,30 @@ header {
     color: var(--color-dark);
 }
 
+.img-modal-cart {
+    width: 48px;
+    height: 48px;
+    object-fit: cover;
+}
+
+.modal-dialog-end {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 360px;
+    max-width: 100%;
+}
+
+.modal.fade .modal-dialog-end {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog-end {
+    transform: translateX(0);
+}
+
 footer {
     background-color: var(--color-dark);
     color: var(--color-cream);
