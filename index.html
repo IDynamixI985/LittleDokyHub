@@ -16,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark container py-2">
             <a class="navbar-brand fw-bold" href="index.html">
                 <img src="assets/images/logo.png" class="img-fluid" alt="Logo Header"
-                    style="width: 80px; height: 80px;">
+                    style="width: 80px; height: 80px; object-fit: contain;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDoky">
@@ -50,12 +50,12 @@
                     </li>
                 </ul>
 
-                <div class="d-flex gap-2">
-                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#modalCarrito">
                         <i class="bi bi-cart3"></i> Carrito
                     </button>
-                    <a href="login.html" class="btn btn-outline-light btn-sm">Ingresar</a>
-                    <a href="registro.html" class="btn btn-main btn-sm">Registrarse</a>
+                    <a href="pages/acconts/login.html" class="btn btn-main btn-sm">Iniciar Sesión</a>
                 </div>
             </div>
         </nav>
@@ -92,8 +92,7 @@
             <div class="row g-4">
                 <div class="col-12 col-md-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="assets/images/americana.jpg"
-                            class="card-img-top img-card" alt="Pizza Americana">
+                        <img src="assets/images/americana.jpg" class="card-img-top img-card" alt="Pizza Americana">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Pizza Americana</h5>
                             <p class="card-text text-muted small">Abundante queso mozzarella fundido, jamón inglés
@@ -107,8 +106,7 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="assets/images/pepperoni.jpg"
-                            class="card-img-top img-card" alt="Pizza Pepperoni">
+                        <img src="assets/images/pepperoni.jpg" class="card-img-top img-card" alt="Pizza Pepperoni">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Pizza Pepperoni</h5>
                             <p class="card-text text-muted small">Capa generosa de queso mozzarella, salsa pomodoro y
@@ -122,8 +120,7 @@
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card h-100 shadow-sm">
-                        <img src="assets/images/hawaiana.jpg"
-                            class="card-img-top img-card" alt="Pizza Hawaiana">
+                        <img src="assets/images/hawaiana.jpg" class="card-img-top img-card" alt="Pizza Hawaiana">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title fw-bold">Pizza Hawaiana</h5>
                             <p class="card-text text-muted small">Queso mozzarella, trozos de jamón inglés y piña dulce
@@ -139,6 +136,7 @@
         </section>
     </main>
 
+    <!-- Modales -->
     <div class="modal fade" id="modalPromo" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
@@ -147,7 +145,7 @@
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body text-center py-4">
-                    <img src="assets/images/" alt="Promo del día">
+                    <img src="assets/images/combo-promo.jpg" alt="Promo del día" class="img-fluid mb-3">
                     <h4 class="fw-bold text-danger">1 Pizza Familiar + 2 Bebidas + Pan al Ajo</h4>
                     <p class="text-muted">Aprovecha hoy por solo <strong>S/ 49.90</strong></p>
                 </div>
@@ -159,7 +157,6 @@
         </div>
     </div>
 
-    
     <div class="modal fade" id="modalCarrito" tabindex="-1">
         <div class="modal-dialog modal-dialog-end m-0 h-100">
             <div class="modal-content h-100 rounded-0 border-0">
@@ -198,7 +195,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="p-3">
                     <div class="border-top pt-3 mt-auto">
                         <div class="d-flex justify-content-between mb-1 text-muted small">
@@ -211,7 +208,8 @@
                         </div>
                         <div class="d-grid gap-2">
                             <a href="checkout.html" class="btn btn-main">Procesar Pedido</a>
-                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Seguir comprando</button>
+                            <button type="button" class="btn btn-outline-secondary btn-sm"
+                                data-bs-dismiss="modal">Seguir comprando</button>
                         </div>
                     </div>
                 </div>
@@ -219,12 +217,13 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="pt-5 pb-4">
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-md-4">
                     <img src="assets/images/logo.png" class="img-fluid" alt="Logo Footer"
-                        style="width: 80px; height: 80px;">
+                        style="width: 80px; height: 80px; object-fit: contain;">
                     <p class="small text-secondary">Pizzería artesanal comprometida con el buen sabor y entregas
                         rápidas.</p>
                     <div class="d-flex gap-3 fs-5">

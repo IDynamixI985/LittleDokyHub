@@ -93,3 +93,101 @@ footer hr {
     height: 200px;
     object-fit: cover;
 }
+
+/* --- Estilos unificados para vistas de Autenticación (Login / Create) --- */
+
+/* 1. Contenedor principal */
+.auth-wrapper {
+    background-color: var(--color-cream);
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+/* 2. Propiedades compartidas entre ambas tarjetas (Login y Registro) */
+.card-auth,
+.card-register {
+    border: 1px solid rgba(139, 76, 42, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(31, 12, 5, 0.08);
+    width: 100%;
+}
+
+/* Modificadores específicos para la tarjeta de Login */
+.card-auth {
+    max-width: 960px;
+    overflow: hidden;
+}
+
+/* Modificadores específicos para la tarjeta de Registro */
+.card-register {
+    background-color: #ffffff;
+    max-width: 620px;
+}
+
+/* 3. Paneles internos del Login */
+.auth-panel-left {
+    background-color: #ffffff;
+}
+
+.auth-panel-right {
+    background-color: #f3f2f2;
+    border-left: 1px solid rgba(139, 76, 42, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .auth-panel-right {
+        border-left: none;
+        border-top: 1px solid rgba(139, 76, 42, 0.1);
+    }
+}
+
+/* 4. Tipografía y Elementos Comunes */
+.auth-title {
+    color: var(--color-dark);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.bullet-icon {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+
+/* 5. Inputs estilizados */
+.form-control-custom {
+    background-color: #ffffff;
+    border: 1.5px solid #d9cbbe;
+    color: var(--color-dark);
+}
+
+.form-control-custom:focus {
+    background-color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(181, 57, 25, 0.15);
+    color: var(--color-dark);
+}
+
+/* 6. Checkboxes personalizados (Registro) */
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(181, 57, 25, 0.15);
+}
+
+/* 7. Enlaces adaptados a la paleta */
+.link-custom {
+    color: var(--color-brown);
+    transition: color 0.2s;
+}
+
+.link-custom:hover {
+    color: var(--color-primary);
+}
