@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categorías - Little Doky's Hub | Pizzería Artesanal</title>
+    <meta name="description" content="Explora nuestras categorías: Pizzas Clásicas, Pizzas Especiales y Bebidas artesanales. Little Doky's Hub, pizzería con alma italiana y corazón peruano.">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/style/styles.css">
+    <style>
+        .hero-categorias {
+            background: linear-gradient(135deg, rgba(31, 12, 5, 0.88), rgba(181, 57, 25, 0.65)),
+                        url('../../assets/images/hero_categorias.jpg') center/cover no-repeat;
+        }
+        .hero-categorias h1 { font-family: 'Playfair Display', serif; }
+        .hero-categorias .lead { font-family: 'Inter', sans-serif; }
+        .cat-tab {
+            background: var(--color-dark);
+            color: var(--color-cream);
+            border: 2px solid transparent;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cat-tab:hover, .cat-tab.active {
+            background: var(--color-primary);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+        .cat-tab.active { border-color: var(--color-accent); }
+        .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(31,12,5,0.15) !important; }
+        .product-card .img-wrapper img { height: 220px; object-fit: cover; transition: transform 0.4s ease; }
+        .product-card:hover .img-wrapper img { transform: scale(1.05); }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+    </style>
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-2">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Header"
+                    style="width: 80px; height: 80px;">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDoky">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navDoky">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menú</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Categorías</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="categorias.html#clasicas">Clásicas</a></li>
+                            <li><a class="dropdown-item" href="categorias.html#especiales">Especiales</a></li>
+                            <li><a class="dropdown-item" href="categorias.html#bebidas">Bebidas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="detalles.html">Detalles</a>
+                    </li>
+                    <li class="nav-item d-none">
+                        <a class="nav-link text-warning" href="admin.html">Admin</a>
+                    </li>
+                </ul>
+
+                <div class="d-flex gap-2">
+                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                        <i class="bi bi-cart3"></i> Carrito
+                    </button>
+                    <a href="login.html" class="btn btn-outline-light btn-sm">Ingresar</a>
+                    <a href="registro.html" class="btn btn-main btn-sm">Registrarse</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- ── HERO BANNER ── -->
+        <section class="hero-categorias text-center text-white py-5">
+            <div class="container py-4">
+                <h1 class="fw-bold display-4 mb-3">Nuestras Categorías</h1>
+                <p class="lead fw-light opacity-75 mb-0">Desde las clásicas que enamoran hasta creaciones únicas que sorprenden.<br>Encuentra tu pizza perfecta.</p>
+            </div>
+        </section>
+
+        <!-- ── CATEGORY TABS ── -->
+        <div class="container">
+            <div class="d-flex justify-content-center gap-3 flex-wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+                <a href="#clasicas" class="cat-tab active rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-clasicas">
+                    <i class="bi bi-fire"></i> Clásicas
+                </a>
+                <a href="#especiales" class="cat-tab rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-especiales">
+                    <i class="bi bi-star-fill"></i> Especiales
+                </a>
+                <a href="#bebidas" class="cat-tab rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-bebidas">
+                    <i class="bi bi-cup-straw"></i> Bebidas
+                </a>
+            </div>
+        </div>
+
+        <!-- ══ SECCIÓN: PIZZAS CLÁSICAS ══ -->
+        <section class="container py-5" id="clasicas">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #B53919, #E6A14B);">
+                    <i class="bi bi-fire"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Pizzas Clásicas</h2>
+                    <p class="mb-0 text-muted small">Las de siempre, con el sabor auténtico de un horno de leña artesanal.</p>
+                </div>
+            </div>
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
+
+            <div class="row g-4">
+                <!-- Americana -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/americana.jpg" class="card-img-top" alt="Pizza Americana">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Americana</h5>
+                            <p class="card-text text-muted small">Abundante queso mozzarella fundido, jamón inglés seleccionado y nuestra salsa pomodoro casera.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 32.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pepperoni -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/pepperoni.jpg" class="card-img-top" alt="Pizza Pepperoni">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Pepperoni</h5>
+                            <p class="card-text text-muted small">Capa generosa de queso mozzarella, salsa pomodoro y rodajas de pepperoni crocante al horno.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 36.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hawaiana -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/hawaiana.jpg" class="card-img-top" alt="Pizza Hawaiana">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Hawaiana</h5>
+                            <p class="card-text text-muted small">Queso mozzarella, trozos de jamón inglés y piña dulce caramelizada al horno de leña.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 35.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SECCIÓN: PIZZAS ESPECIALES ══ -->
+        <section class="container py-5" id="especiales">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #8B4C2A, #B53919);">
+                    <i class="bi bi-star-fill"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Pizzas Especiales &amp; Gourmet</h2>
+                    <p class="mb-0 text-muted small">Creaciones exclusivas con ingredientes premium y fusión ítalo-peruana.</p>
+                </div>
+            </div>
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
+
+            <div class="row g-4">
+                <!-- Doky House Special -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/doky_house.jpg" class="card-img-top" alt="Doky House Special">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Doky House Special</h5>
+                            <p class="card-text text-muted small">Jamón serrano curado, champiñones al ajillo, queso gorgonzola y reducción balsámica artesanal.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 44.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carnívora Suprema -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/full_meat.jpg" class="card-img-top" alt="Carnívora Suprema">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Carnívora Suprema</h5>
+                            <p class="card-text text-muted small">Carne sazonada, tocino ahumado crocante, salchicha italiana, pepperoni y mozzarella fundida.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 42.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cuatro Quesos -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/cuatro_quesos.jpg" class="card-img-top" alt="Cuatro Quesos">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Cuatro Quesos</h5>
+                            <p class="card-text text-muted small">Mozzarella de búfala, provolone ahumado, queso azul cremoso y parmesano madurado.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 40.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lomo Saltado -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/lomo_saltado.jpg" class="card-img-top" alt="Pizza Lomo Saltado">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Lomo Saltado</h5>
+                            <p class="card-text text-muted small">Tiras de lomo fino al wok, cebolla morada, tomate, ají amarillo y queso mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 46.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ají de Gallina -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/aji_gallina.jpg" class="card-img-top" alt="Pizza Ají de Gallina">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Ají de Gallina</h5>
+                            <p class="card-text text-muted small">Crema casera de ají de gallina, hebras de pollo tierno, aceituna botija y mozzarella.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 38.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Huachana -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/huachana.jpg" class="card-img-top" alt="Pizza Huachana">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Huachana</h5>
+                            <p class="card-text text-muted small">Salchicha huachana dorada artesanal, mozzarella, huevo de codorniz y cebollita china.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 39.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ══ SECCIÓN: BEBIDAS ══ -->
+        <section class="container py-5" id="bebidas">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #1F0C05, #8B4C2A);">
+                    <i class="bi bi-cup-straw"></i>
+                </div>
+                <div>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Bebidas</h2>
+                    <p class="mb-0 text-muted small">El acompañamiento perfecto: desde gaseosas heladas hasta cerveza artesanal.</p>
+                </div>
+            </div>
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
+
+            <div class="row g-4">
+                <!-- Gaseosas -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/gaseosas.jpg" class="card-img-top" alt="Gaseosas 1.5L">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Gaseosas 1.5 L</h5>
+                            <p class="card-text text-muted small">Inca Kola o Coca-Cola en botella de 1.5 Litros, servidas bien heladas para tu mesa.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 10.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Chicha Morada -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/chicha.jpg" class="card-img-top" alt="Chicha Morada">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Chicha Morada (1 L)</h5>
+                            <p class="card-text text-muted small">Elaborada artesanalmente con maíz morado, piña, membrillo, manzana y toque de canela.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 12.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cerveza Artesanal -->
+                <div class="col-12 col-sm-6 col-lg-4 fade-up">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/cerveza.jpg" class="card-img-top" alt="Cerveza Artesanal">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Cerveza Artesanal</h5>
+                            <p class="card-text text-muted small">Botella personal de 330 ml. Variedades: IPA, Red Ale o Trigo artesanal local.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 14.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── CTA Banner ── -->
+        <section class="container my-5">
+            <div class="text-center text-white rounded-4 p-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-dark), var(--color-brown));">
+                <h3 class="fw-bold mb-3" style="font-family: 'Playfair Display', serif;"><i class="bi bi-truck me-2"></i>¿No encuentras lo que buscas?</h3>
+                <p class="opacity-75 mb-4" style="font-family: 'Inter', sans-serif;">Visita nuestro menú completo con entradas, acompañamientos y combos especiales.</p>
+                <a href="menu.html" class="btn btn-accent btn-lg px-5">
+                    <i class="bi bi-grid-3x3-gap me-2"></i>Ver Menú Completo
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Modal Carrito ── -->
+    <div class="modal fade" id="modalCarrito" tabindex="-1">
+        <div class="modal-dialog modal-dialog-end m-0 h-100">
+            <div class="modal-content h-100 rounded-0 border-0">
+                <div class="modal-header bg-dark text-white rounded-0">
+                    <h5 class="modal-title fw-bold" id="modalCarritoLabel">Mis productos</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body d-flex flex-column">
+                    <div class="flex-grow-1">
+                        <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../../assets/images/americana.jpg" alt="Americana" class="rounded img-modal-cart">
+                                <div>
+                                    <h6 class="mb-0 fw-bold fs-6">Pizza Americana</h6>
+                                    <small class="text-muted">Familiar - S/ 32.00</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="fw-bold d-block">S/ 32.00</span>
+                                <button class="btn btn-sm text-danger p-0 border-0"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-between border-bottom py-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <img src="../../assets/images/pepperoni.jpg" alt="Pepperoni" class="rounded img-modal-cart">
+                                <div>
+                                    <h6 class="mb-0 fw-bold fs-6">Pizza Pepperoni</h6>
+                                    <small class="text-muted">Mediana - S/ 36.00</small>
+                                </div>
+                            </div>
+                            <div class="text-end">
+                                <span class="fw-bold d-block">S/ 36.00</span>
+                                <button class="btn btn-sm text-danger p-0 border-0"><i class="bi bi-trash"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-3">
+                    <div class="border-top pt-3 mt-auto">
+                        <div class="d-flex justify-content-between mb-1 text-muted small">
+                            <span>Subtotal:</span>
+                            <span>S/ 68.00</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-3 fw-bold fs-5">
+                            <span>Total a pagar:</span>
+                            <span class="text-danger">S/ 68.00</span>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="checkout.html" class="btn btn-main">Procesar Pedido</a>
+                            <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Seguir comprando</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="pt-5 pb-4">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Footer"
+                        style="width: 80px; height: 80px;">
+                    <p class="small text-secondary">Pizzería artesanal comprometida con el buen sabor y entregas
+                        rápidas.</p>
+                    <div class="d-flex gap-3 fs-5">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h6>Menú</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-1">
+                        <li><a href="menu.html#principal">Tradicionales</a></li>
+                        <li><a href="menu.html#especial">Especiales</a></li>
+                        <li><a href="menu.html#bebidas">Bebidas</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-6 col-md-4">
+                    <h6>Atención</h6>
+                    <ul class="list-unstyled small d-flex flex-column gap-1">
+                        <li><a href="detalles.html">Detalles</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-4">
+            <p class="text-center small mb-0 text-secondary">
+                &copy; 2026 Little Doky's Hub. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // ── Scroll fade-up animation ──
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ── Active tab on scroll ──
+        const sections = document.querySelectorAll('section[id]');
+        const tabs = document.querySelectorAll('.cat-tab');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 200;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+                if (tab.getAttribute('href') === '#' + current) {
+                    tab.classList.add('active');
+                }
+            });
+        });
+
+        // ── Smooth scroll for tabs ──
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(tab.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
