@@ -6,282 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Categorías - Little Doky's Hub | Pizzería Artesanal</title>
     <meta name="description" content="Explora nuestras categorías: Pizzas Clásicas, Pizzas Especiales y Bebidas artesanales. Little Doky's Hub, pizzería con alma italiana y corazón peruano.">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/style/styles.css">
+    <link rel="stylesheet" href="../../assets/style/styles.css">
     <style>
-        /* ── Categorías Page Styles ── */
         .hero-categorias {
             background: linear-gradient(135deg, rgba(31, 12, 5, 0.88), rgba(181, 57, 25, 0.65)),
-                        url('assets/images/hero_categorias.jpg') center/cover no-repeat;
-            color: #fff;
-            padding: 5rem 0 4rem;
-            position: relative;
-            overflow: hidden;
+                        url('../../assets/images/hero_categorias.jpg') center/cover no-repeat;
         }
-
-        .hero-categorias::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 80px;
-            background: linear-gradient(to top, var(--color-cream), transparent);
-        }
-
-        .hero-categorias h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 900;
-            font-size: 3.2rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero-categorias .lead {
-            font-family: 'Inter', sans-serif;
-            font-weight: 300;
-            opacity: 0.9;
-        }
-
-        /* ── Category Tabs ── */
-        .category-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: -2rem;
-            position: relative;
-            z-index: 10;
-        }
-
+        .hero-categorias h1 { font-family: 'Playfair Display', serif; }
+        .hero-categorias .lead { font-family: 'Inter', sans-serif; }
         .cat-tab {
             background: var(--color-dark);
             color: var(--color-cream);
             border: 2px solid transparent;
-            border-radius: 60px;
-            padding: 0.8rem 2rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.95rem;
-            cursor: pointer;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
-
-        .cat-tab:hover {
+        .cat-tab:hover, .cat-tab.active {
             background: var(--color-primary);
             color: #fff;
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(181, 57, 25, 0.35);
         }
-
-        .cat-tab.active {
-            background: var(--color-primary);
-            color: #fff;
-            border-color: var(--color-accent);
-            box-shadow: 0 6px 20px rgba(181, 57, 25, 0.4);
-        }
-
-        .cat-tab i {
-            font-size: 1.1rem;
-        }
-
-        /* ── Category Section ── */
-        .category-section {
-            padding: 3rem 0;
-        }
-
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .category-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #fff;
-            flex-shrink: 0;
-        }
-
-        .category-icon.clasicas { background: linear-gradient(135deg, #B53919, #E6A14B); }
-        .category-icon.especiales { background: linear-gradient(135deg, #8B4C2A, #B53919); }
-        .category-icon.bebidas { background: linear-gradient(135deg, #1F0C05, #8B4C2A); }
-
-        .category-header h2 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            margin: 0;
-            font-size: 2rem;
-        }
-
-        .category-header p {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: var(--color-brown);
-            font-size: 0.9rem;
-        }
-
-        .category-divider {
-            height: 3px;
-            background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent);
-            border: none;
-            margin-bottom: 2rem;
-            border-radius: 2px;
-        }
-
-        /* ── Product Cards ── */
-        .product-card {
-            border: none;
-            border-radius: 16px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 2px 12px rgba(31, 12, 5, 0.08);
-            background: #fff;
-        }
-
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(31, 12, 5, 0.15);
-        }
-
-        .product-card .card-img-top {
-            height: 220px;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .product-card:hover .card-img-top {
-            transform: scale(1.06);
-        }
-
-        .product-card .img-wrapper {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .product-card .badge-cat {
-            position: absolute;
-            top: 12px;
-            left: 12px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.35rem 0.8rem;
-            border-radius: 30px;
-            z-index: 2;
-        }
-
-        .badge-clasica { background: linear-gradient(135deg, #B53919, #d44a29); color: #fff; }
-        .badge-especial { background: linear-gradient(135deg, #8B4C2A, #a5633d); color: #fff; }
-        .badge-bebida { background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); }
-
-        .product-card .card-body {
-            padding: 1.2rem 1.3rem;
-        }
-
-        .product-card .card-title {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 1.15rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .product-card .card-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            line-height: 1.5;
-        }
-
-        .product-card .price {
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1.3rem;
-            color: var(--color-primary);
-        }
-
-        .btn-add {
-            background: var(--color-dark);
-            color: var(--color-accent);
-            border: none;
-            border-radius: 30px;
-            padding: 0.45rem 1.2rem;
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.82rem;
-            transition: all 0.3s ease;
-        }
-
-        .btn-add:hover {
-            background: var(--color-primary);
-            color: #fff;
-            transform: scale(1.05);
-        }
-
-        /* ── Scroll animation ── */
-        .fade-up {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-
-        .fade-up.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* ── CTA Banner ── */
-        .cta-banner {
-            background: linear-gradient(135deg, var(--color-dark), var(--color-brown));
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-banner::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -30%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(230, 161, 75, 0.15), transparent 70%);
-            border-radius: 50%;
-        }
-
-        .cta-banner h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-
-        .cta-banner p {
-            font-family: 'Inter', sans-serif;
-            opacity: 0.85;
-        }
+        .cat-tab.active { border-color: var(--color-accent); }
+        .product-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 30px rgba(31,12,5,0.15) !important; }
+        .product-card .img-wrapper img { height: 220px; object-fit: cover; transition: transform 0.4s ease; }
+        .product-card:hover .img-wrapper img { transform: scale(1.05); }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 
 <body>
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg navbar-dark container py-2">
-            <a class="navbar-brand fw-bold" href="index.html">
-                <img src="assets/images/logo.png" class="img-fluid" alt="Logo Header"
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Header"
                     style="width: 80px; height: 80px;">
             </a>
 
@@ -292,24 +55,21 @@
             <div class="collapse navbar-collapse" id="navDoky">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
+                        <a class="nav-link" href="../../index.html">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pages/shop/menu.html">Menú</a>
+                        <a class="nav-link" href="menu.html">Menú</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle active" href="#" data-bs-toggle="dropdown">Categorías</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#clasicas">Clásicas</a></li>
-                            <li><a class="dropdown-item" href="#especiales">Especiales</a></li>
-                            <li><a class="dropdown-item" href="#bebidas">Bebidas</a></li>
+                            <li><a class="dropdown-item" href="categorias.html#clasicas">Clásicas</a></li>
+                            <li><a class="dropdown-item" href="categorias.html#especiales">Especiales</a></li>
+                            <li><a class="dropdown-item" href="categorias.html#bebidas">Bebidas</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="detalles.html">Nuestra Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contacto.html">Contacto</a>
                     </li>
                     <li class="nav-item d-none">
                         <a class="nav-link text-warning" href="admin.html">Admin</a>
@@ -329,55 +89,55 @@
 
     <main>
         <!-- ── HERO BANNER ── -->
-        <section class="hero-categorias text-center">
-            <div class="container">
-                <h1 class="mb-3">Nuestras Categorías</h1>
-                <p class="lead mb-0">Desde las clásicas que enamoran hasta creaciones únicas que sorprenden.<br>Encuentra tu pizza perfecta.</p>
+        <section class="hero-categorias text-center text-white py-5">
+            <div class="container py-4">
+                <h1 class="fw-bold display-4 mb-3">Nuestras Categorías</h1>
+                <p class="lead fw-light opacity-75 mb-0">Desde las clásicas que enamoran hasta creaciones únicas que sorprenden.<br>Encuentra tu pizza perfecta.</p>
             </div>
         </section>
 
         <!-- ── CATEGORY TABS ── -->
         <div class="container">
-            <div class="category-tabs">
-                <a href="#clasicas" class="cat-tab active" id="tab-clasicas">
+            <div class="d-flex justify-content-center gap-3 flex-wrap" style="margin-top: -1.5rem; position: relative; z-index: 10;">
+                <a href="#clasicas" class="cat-tab active rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-clasicas">
                     <i class="bi bi-fire"></i> Clásicas
                 </a>
-                <a href="#especiales" class="cat-tab" id="tab-especiales">
+                <a href="#especiales" class="cat-tab rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-especiales">
                     <i class="bi bi-star-fill"></i> Especiales
                 </a>
-                <a href="#bebidas" class="cat-tab" id="tab-bebidas">
+                <a href="#bebidas" class="cat-tab rounded-pill px-4 py-2 fw-semibold d-inline-flex align-items-center gap-2 shadow" id="tab-bebidas">
                     <i class="bi bi-cup-straw"></i> Bebidas
                 </a>
             </div>
         </div>
 
-        <!-- ════════════════════════════════════════════════ -->
-        <!-- ── SECCIÓN: PIZZAS CLÁSICAS ── -->
-        <!-- ════════════════════════════════════════════════ -->
-        <section class="category-section container" id="clasicas">
-            <div class="category-header">
-                <div class="category-icon clasicas"><i class="bi bi-fire"></i></div>
+        <!-- ══ SECCIÓN: PIZZAS CLÁSICAS ══ -->
+        <section class="container py-5" id="clasicas">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #B53919, #E6A14B);">
+                    <i class="bi bi-fire"></i>
+                </div>
                 <div>
-                    <h2>Pizzas Clásicas</h2>
-                    <p>Las de siempre, con el sabor auténtico de un horno de leña artesanal.</p>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Pizzas Clásicas</h2>
+                    <p class="mb-0 text-muted small">Las de siempre, con el sabor auténtico de un horno de leña artesanal.</p>
                 </div>
             </div>
-            <hr class="category-divider">
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
 
             <div class="row g-4">
                 <!-- Americana -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-clasica">Clásica</span>
-                            <img src="assets/images/americana.jpg" class="card-img-top" alt="Pizza Americana">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/americana.jpg" class="card-img-top" alt="Pizza Americana">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Americana</h5>
-                            <p class="card-text text-muted">Abundante queso mozzarella fundido, jamón inglés seleccionado y nuestra salsa pomodoro casera.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Americana</h5>
+                            <p class="card-text text-muted small">Abundante queso mozzarella fundido, jamón inglés seleccionado y nuestra salsa pomodoro casera.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 32.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 32.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -385,17 +145,17 @@
 
                 <!-- Pepperoni -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-clasica">Clásica</span>
-                            <img src="assets/images/pepperoni.jpg" class="card-img-top" alt="Pizza Pepperoni">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/pepperoni.jpg" class="card-img-top" alt="Pizza Pepperoni">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Pepperoni</h5>
-                            <p class="card-text text-muted">Capa generosa de queso mozzarella, salsa pomodoro y rodajas de pepperoni crocante al horno.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Pepperoni</h5>
+                            <p class="card-text text-muted small">Capa generosa de queso mozzarella, salsa pomodoro y rodajas de pepperoni crocante al horno.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 36.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 36.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -403,17 +163,17 @@
 
                 <!-- Hawaiana -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-clasica">Clásica</span>
-                            <img src="assets/images/hawaiana.jpg" class="card-img-top" alt="Pizza Hawaiana">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #B53919, #d44a29); z-index: 2; letter-spacing: 1px;">Clásica</span>
+                            <img src="../../assets/images/hawaiana.jpg" class="card-img-top" alt="Pizza Hawaiana">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Hawaiana</h5>
-                            <p class="card-text text-muted">Queso mozzarella, trozos de jamón inglés y piña dulce caramelizada al horno de leña.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Hawaiana</h5>
+                            <p class="card-text text-muted small">Queso mozzarella, trozos de jamón inglés y piña dulce caramelizada al horno de leña.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 35.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 35.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -421,33 +181,33 @@
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════════ -->
-        <!-- ── SECCIÓN: PIZZAS ESPECIALES ── -->
-        <!-- ════════════════════════════════════════════════ -->
-        <section class="category-section container" id="especiales">
-            <div class="category-header">
-                <div class="category-icon especiales"><i class="bi bi-star-fill"></i></div>
+        <!-- ══ SECCIÓN: PIZZAS ESPECIALES ══ -->
+        <section class="container py-5" id="especiales">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #8B4C2A, #B53919);">
+                    <i class="bi bi-star-fill"></i>
+                </div>
                 <div>
-                    <h2>Pizzas Especiales & Gourmet</h2>
-                    <p>Creaciones exclusivas con ingredientes premium y fusión ítalo-peruana.</p>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Pizzas Especiales &amp; Gourmet</h2>
+                    <p class="mb-0 text-muted small">Creaciones exclusivas con ingredientes premium y fusión ítalo-peruana.</p>
                 </div>
             </div>
-            <hr class="category-divider">
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
 
             <div class="row g-4">
                 <!-- Doky House Special -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Especial</span>
-                            <img src="assets/images/doky_house.jpg" class="card-img-top" alt="Doky House Special">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/doky_house.jpg" class="card-img-top" alt="Doky House Special">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Doky House Special</h5>
-                            <p class="card-text text-muted">Jamón serrano curado, champiñones al ajillo, queso gorgonzola y reducción balsámica artesanal.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Doky House Special</h5>
+                            <p class="card-text text-muted small">Jamón serrano curado, champiñones al ajillo, queso gorgonzola y reducción balsámica artesanal.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 44.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 44.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -455,17 +215,17 @@
 
                 <!-- Carnívora Suprema -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Especial</span>
-                            <img src="assets/images/full_meat.jpg" class="card-img-top" alt="Carnívora Suprema">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/full_meat.jpg" class="card-img-top" alt="Carnívora Suprema">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Carnívora Suprema</h5>
-                            <p class="card-text text-muted">Carne sazonada, tocino ahumado crocante, salchicha italiana, pepperoni y mozzarella fundida.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Carnívora Suprema</h5>
+                            <p class="card-text text-muted small">Carne sazonada, tocino ahumado crocante, salchicha italiana, pepperoni y mozzarella fundida.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 42.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 42.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -473,17 +233,17 @@
 
                 <!-- Cuatro Quesos -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Especial</span>
-                            <img src="assets/images/cuatro_quesos.jpg" class="card-img-top" alt="Cuatro Quesos">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Especial</span>
+                            <img src="../../assets/images/cuatro_quesos.jpg" class="card-img-top" alt="Cuatro Quesos">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Cuatro Quesos</h5>
-                            <p class="card-text text-muted">Mozzarella de búfala, provolone ahumado, queso azul cremoso y parmesano madurado.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Cuatro Quesos</h5>
+                            <p class="card-text text-muted small">Mozzarella de búfala, provolone ahumado, queso azul cremoso y parmesano madurado.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 40.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 40.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -491,17 +251,17 @@
 
                 <!-- Lomo Saltado -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Fusión</span>
-                            <img src="assets/images/lomo_saltado.jpg" class="card-img-top" alt="Pizza Lomo Saltado">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/lomo_saltado.jpg" class="card-img-top" alt="Pizza Lomo Saltado">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Lomo Saltado</h5>
-                            <p class="card-text text-muted">Tiras de lomo fino al wok, cebolla morada, tomate, ají amarillo y queso mozzarella.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Lomo Saltado</h5>
+                            <p class="card-text text-muted small">Tiras de lomo fino al wok, cebolla morada, tomate, ají amarillo y queso mozzarella.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 46.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 46.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -509,17 +269,17 @@
 
                 <!-- Ají de Gallina -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Fusión</span>
-                            <img src="assets/images/aji_gallina.jpg" class="card-img-top" alt="Pizza Ají de Gallina">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/aji_gallina.jpg" class="card-img-top" alt="Pizza Ají de Gallina">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Ají de Gallina</h5>
-                            <p class="card-text text-muted">Crema casera de ají de gallina, hebras de pollo tierno, aceituna botija y mozzarella.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Ají de Gallina</h5>
+                            <p class="card-text text-muted small">Crema casera de ají de gallina, hebras de pollo tierno, aceituna botija y mozzarella.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 38.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 38.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -527,17 +287,17 @@
 
                 <!-- Huachana -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-especial">Fusión</span>
-                            <img src="assets/images/huachana.jpg" class="card-img-top" alt="Pizza Huachana">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #8B4C2A, #a5633d); z-index: 2; letter-spacing: 1px;">Fusión</span>
+                            <img src="../../assets/images/huachana.jpg" class="card-img-top" alt="Pizza Huachana">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Pizza Huachana</h5>
-                            <p class="card-text text-muted">Salchicha huachana dorada artesanal, mozzarella, huevo de codorniz y cebollita china.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Pizza Huachana</h5>
+                            <p class="card-text text-muted small">Salchicha huachana dorada artesanal, mozzarella, huevo de codorniz y cebollita china.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 39.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 39.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -545,33 +305,33 @@
             </div>
         </section>
 
-        <!-- ════════════════════════════════════════════════ -->
-        <!-- ── SECCIÓN: BEBIDAS ── -->
-        <!-- ════════════════════════════════════════════════ -->
-        <section class="category-section container" id="bebidas">
-            <div class="category-header">
-                <div class="category-icon bebidas"><i class="bi bi-cup-straw"></i></div>
+        <!-- ══ SECCIÓN: BEBIDAS ══ -->
+        <section class="container py-5" id="bebidas">
+            <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="rounded-3 d-flex align-items-center justify-content-center text-white fs-4" style="width: 56px; height: 56px; background: linear-gradient(135deg, #1F0C05, #8B4C2A);">
+                    <i class="bi bi-cup-straw"></i>
+                </div>
                 <div>
-                    <h2>Bebidas</h2>
-                    <p>El acompañamiento perfecto: desde gaseosas heladas hasta cerveza artesanal.</p>
+                    <h2 class="mb-0 fw-bold" style="font-family: 'Playfair Display', serif; font-size: 2rem;">Bebidas</h2>
+                    <p class="mb-0 text-muted small">El acompañamiento perfecto: desde gaseosas heladas hasta cerveza artesanal.</p>
                 </div>
             </div>
-            <hr class="category-divider">
+            <hr class="border-2 mb-4" style="background: linear-gradient(to right, var(--color-primary), var(--color-accent), transparent); border: none; height: 3px;">
 
             <div class="row g-4">
                 <!-- Gaseosas -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-bebida">Bebida</span>
-                            <img src="assets/images/gaseosas.jpg" class="card-img-top" alt="Gaseosas 1.5L">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/gaseosas.jpg" class="card-img-top" alt="Gaseosas 1.5L">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Gaseosas 1.5 L</h5>
-                            <p class="card-text text-muted">Inca Kola o Coca-Cola en botella de 1.5 Litros, servidas bien heladas para tu mesa.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Gaseosas 1.5 L</h5>
+                            <p class="card-text text-muted small">Inca Kola o Coca-Cola en botella de 1.5 Litros, servidas bien heladas para tu mesa.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 10.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 10.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -579,17 +339,17 @@
 
                 <!-- Chicha Morada -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-bebida">Bebida</span>
-                            <img src="assets/images/chicha.jpg" class="card-img-top" alt="Chicha Morada">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/chicha.jpg" class="card-img-top" alt="Chicha Morada">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Chicha Morada (1 L)</h5>
-                            <p class="card-text text-muted">Elaborada artesanalmente con maíz morado, piña, membrillo, manzana y toque de canela.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Chicha Morada (1 L)</h5>
+                            <p class="card-text text-muted small">Elaborada artesanalmente con maíz morado, piña, membrillo, manzana y toque de canela.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 12.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 12.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -597,17 +357,17 @@
 
                 <!-- Cerveza Artesanal -->
                 <div class="col-12 col-sm-6 col-lg-4 fade-up">
-                    <div class="card product-card h-100">
-                        <div class="img-wrapper">
-                            <span class="badge-cat badge-bebida">Bebida</span>
-                            <img src="assets/images/cerveza.jpg" class="card-img-top" alt="Cerveza Artesanal">
+                    <div class="card product-card h-100 border-0 shadow-sm rounded-4 overflow-hidden">
+                        <div class="img-wrapper overflow-hidden position-relative">
+                            <span class="badge rounded-pill position-absolute top-0 start-0 m-2 text-uppercase small fw-semibold" style="background: linear-gradient(135deg, #1F0C05, #3d2418); color: var(--color-accent); z-index: 2; letter-spacing: 1px;">Bebida</span>
+                            <img src="../../assets/images/cerveza.jpg" class="card-img-top" alt="Cerveza Artesanal">
                         </div>
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">Cerveza Artesanal</h5>
-                            <p class="card-text text-muted">Botella personal de 330 ml. Variedades: IPA, Red Ale o Trigo artesanal local.</p>
+                            <h5 class="card-title fw-bold" style="font-family: 'Playfair Display', serif;">Cerveza Artesanal</h5>
+                            <p class="card-text text-muted small">Botella personal de 330 ml. Variedades: IPA, Red Ale o Trigo artesanal local.</p>
                             <div class="mt-auto d-flex justify-content-between align-items-center pt-2">
-                                <span class="price">S/ 14.00</span>
-                                <button class="btn btn-add"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
+                                <span class="fw-bold fs-5" style="color: var(--color-primary);">S/ 14.00</span>
+                                <button class="btn btn-dark btn-sm rounded-pill px-3"><i class="bi bi-cart-plus me-1"></i>Agregar</button>
                             </div>
                         </div>
                     </div>
@@ -617,10 +377,10 @@
 
         <!-- ── CTA Banner ── -->
         <section class="container my-5">
-            <div class="cta-banner text-center">
-                <h3 class="mb-3"><i class="bi bi-truck me-2"></i>¿No encuentras lo que buscas?</h3>
-                <p class="mb-4">Visita nuestro menú completo con entradas, acompañamientos y combos especiales.</p>
-                <a href="pages/shop/menu.html" class="btn btn-accent btn-lg px-5">
+            <div class="text-center text-white rounded-4 p-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-dark), var(--color-brown));">
+                <h3 class="fw-bold mb-3" style="font-family: 'Playfair Display', serif;"><i class="bi bi-truck me-2"></i>¿No encuentras lo que buscas?</h3>
+                <p class="opacity-75 mb-4" style="font-family: 'Inter', sans-serif;">Visita nuestro menú completo con entradas, acompañamientos y combos especiales.</p>
+                <a href="menu.html" class="btn btn-accent btn-lg px-5">
                     <i class="bi bi-grid-3x3-gap me-2"></i>Ver Menú Completo
                 </a>
             </div>
@@ -640,7 +400,7 @@
                     <div class="flex-grow-1">
                         <div class="d-flex align-items-center justify-content-between border-bottom py-2">
                             <div class="d-flex align-items-center gap-2">
-                                <img src="assets/images/americana.jpg" alt="Americana" class="rounded img-modal-cart">
+                                <img src="../../assets/images/americana.jpg" alt="Americana" class="rounded img-modal-cart">
                                 <div>
                                     <h6 class="mb-0 fw-bold fs-6">Pizza Americana</h6>
                                     <small class="text-muted">Familiar - S/ 32.00</small>
@@ -653,7 +413,7 @@
                         </div>
                         <div class="d-flex align-items-center justify-content-between border-bottom py-2">
                             <div class="d-flex align-items-center gap-2">
-                                <img src="assets/images/pepperoni.jpg" alt="Pepperoni" class="rounded img-modal-cart">
+                                <img src="../../assets/images/pepperoni.jpg" alt="Pepperoni" class="rounded img-modal-cart">
                                 <div>
                                     <h6 class="mb-0 fw-bold fs-6">Pizza Pepperoni</h6>
                                     <small class="text-muted">Mediana - S/ 36.00</small>
@@ -690,7 +450,7 @@
         <div class="container">
             <div class="row g-4">
                 <div class="col-12 col-md-4">
-                    <img src="assets/images/logo.png" class="img-fluid" alt="Logo Footer"
+                    <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Footer"
                         style="width: 80px; height: 80px;">
                     <p class="small text-secondary">Pizzería artesanal comprometida con el buen sabor y entregas
                         rápidas.</p>
@@ -704,9 +464,9 @@
                 <div class="col-6 col-md-4">
                     <h6>Menú</h6>
                     <ul class="list-unstyled small d-flex flex-column gap-1">
-                        <li><a href="pages/shop/menu.html#principal">Tradicionales</a></li>
-                        <li><a href="pages/shop/menu.html#especial">Especiales</a></li>
-                        <li><a href="pages/shop/menu.html#bebidas">Bebidas</a></li>
+                        <li><a href="menu.html#principal">Tradicionales</a></li>
+                        <li><a href="menu.html#especial">Especiales</a></li>
+                        <li><a href="menu.html#bebidas">Bebidas</a></li>
                     </ul>
                 </div>
 
@@ -714,8 +474,7 @@
                     <h6>Atención</h6>
                     <ul class="list-unstyled small d-flex flex-column gap-1">
                         <li><a href="detalles.html">Nuestra Historia</a></li>
-                        <li><a href="contacto.html">Contacto</a></li>
-                        <li><a href="contacto.html">Zonas de Reparto</a></li>
+                        <li><a href="categorias.html">Categorías</a></li>
                     </ul>
                 </div>
             </div>
@@ -741,7 +500,7 @@
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
         // ── Active tab on scroll ──
-        const sections = document.querySelectorAll('.category-section');
+        const sections = document.querySelectorAll('section[id]');
         const tabs = document.querySelectorAll('.cat-tab');
 
         window.addEventListener('scroll', () => {
