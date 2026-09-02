@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Doky's Hub - Administrador</title>
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../../assets/style/styles.css">
+</head>
+
+<body>
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark container py-2">
+            <a class="navbar-brand fw-bold" href="../../index.html">
+                <img src="../../assets/images/logo.png" alt="Logo" style="width:80px;height:80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navAdmin">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navAdmin">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link active text-warning" href="admin.html">Administrador</a>
+                    </li>
+                </ul>
+                <a href="../../index.html" class="btn btn-outline-light btn-sm">
+                    <i class="bi bi-box-arrow-left me-1"></i>Salir
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main class="py-5">
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="fw-bold mb-1">Panel de administrador</h1>
+                    <p class="text-muted mb-0">Gestiona la información de Little Doky's Hub.</p>
+                </div><span class="badge text-bg-dark p-2"><i class="bi bi-person-circle me-1"></i> Administrador</span>
+            </div>
+            <div class="row g-4 mb-4">
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between"><span class="text-muted">Productos</span><i
+                                    class="bi bi-basket fs-4 text-danger"></i></div>
+                            <h2 class="fw-bold mt-2">16</h2><small class="text-muted">Disponibles en el menú</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between"><span class="text-muted">Pedidos</span><i
+                                    class="bi bi-receipt fs-4 text-danger"></i></div>
+                            <h2 class="fw-bold mt-2">24</h2><small class="text-muted">Pedidos registrados</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between"><span class="text-muted">Clientes</span><i
+                                    class="bi bi-people fs-4 text-danger"></i></div>
+                            <h2 class="fw-bold mt-2">58</h2><small class="text-muted">Usuarios registrados</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between"><span class="text-muted">Mensajes</span><i
+                                    class="bi bi-envelope fs-4 text-danger"></i></div>
+                            <h2 id="messageCount" class="fw-bold mt-2">0</h2><small class="text-muted">Consultas de
+                                contacto</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0"><i class="bi bi-envelope me-2"></i>Mensajes de contacto</h5><button
+                        class="btn btn-sm btn-outline-light" onclick="limpiarMensajes()">Limpiar mensajes</button>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Asunto</th>
+                                    <th>Mensaje</th>
+                                    <th>Fecha</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody id="messagesTable">
+                                <tr>
+                                    <td colspan="6" class="text-center text-muted py-4">No hay mensajes registrados.
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">Últimos pedidos</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Cliente</th>
+                                        <th>Total</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#1024</td>
+                                        <td>Juan Pérez</td>
+                                        <td>S/ 68.00</td>
+                                        <td><span class="badge text-bg-success">Entregado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1023</td>
+                                        <td>María López</td>
+                                        <td>S/ 49.90</td>
+                                        <td><span class="badge text-bg-warning">En preparación</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#1022</td>
+                                        <td>Carlos Ruiz</td>
+                                        <td>S/ 82.00</td>
+                                        <td><span class="badge text-bg-info">En camino</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-header bg-white">
+                            <h5 class="mb-0 fw-bold">Acciones rápidas</h5>
+                        </div>
+                        <div class="card-body d-grid gap-2"><a href="pages/shop/menu.html" class="btn btn-main"><i
+                                    class="bi bi-plus-circle me-2"></i>Ver productos</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="pt-4 pb-3">
+        <div class="container">
+            <p class="text-center small mb-0 text-secondary">&copy; 2026 Little Doky's Hub - Panel de administración</p>
+        </div>
+    </footer>
+    <script src="../../assets/js/admin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
