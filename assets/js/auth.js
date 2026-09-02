@@ -18,7 +18,7 @@ if (toggleButtons.length > 0) {
         button.addEventListener('click', function () {
             const targetId = this.getAttribute('data-target');
             const input = document.getElementById(targetId);
-            
+
             if (input) {
                 const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
                 input.setAttribute('type', type);
