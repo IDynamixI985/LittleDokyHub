@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuestra Historia - Little Doky's Hub | Pizzería Artesanal</title>
-    <meta name="description" content="Conoce la historia de Little Doky's Hub: una pizzería con linaje italiano y corazón peruano. Desde Nápoles hasta Lima, más de 60 años de tradición pizzera.">
+    <title>Little Doky's Hub - Detalles y Nuestra Historia</title>
     <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../assets/style/styles.css">
 </head>
 
@@ -18,7 +16,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark container py-2">
             <a class="navbar-brand fw-bold" href="../../index.html">
                 <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Header"
-                    style="width: 80px; height: 80px;">
+                    style="width: 80px; height: 80px; object-fit: contain;">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navDoky">
@@ -49,8 +47,9 @@
                     </li>
                 </ul>
 
-                <div class="d-flex gap-2">
-                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal" data-bs-target="#modalCarrito">
+                <div class="d-flex align-items-center gap-2">
+                    <button class="btn btn-accent btn-sm position-relative me-2" type="button" data-bs-toggle="modal"
+                        data-bs-target="#modalCarrito">
                         <i class="bi bi-cart3"></i> Carrito
                     </button>
                     <div class="d-flex align-items-center">
@@ -62,280 +61,119 @@
     </header>
 
     <main>
-        <!-- ── HERO BANNER ── -->
-        <section class="hero-detalles text-center text-white py-5">
-            <div class="container py-5 position-relative" style="z-index: 2;">
-                <p class="fst-italic fs-5 mb-2" style="font-family: 'Playfair Display', serif; color: var(--color-accent);">Desde Nápoles hasta Lima</p>
-                <h1 class="fw-bold display-3 mb-3">Nuestra Historia</h1>
-                <p class="lead fw-light opacity-75 mx-auto" style="max-width: 700px; font-family: 'Inter', sans-serif;">Más de 60 años de tradición pizzera, donde el sabor de Italia<br>se fusiona con el alma del Perú.</p>
+
+        <section class="banner-principal text-center py-5">
+            <div class="container py-4">
+                <h1 class="display-5 fw-bold mb-3">Nuestra Historia</h1>
+                <p class="lead mb-4">Más de 60 años de tradición artesanal, uniendo el arte de Italia con el corazón del
+                    Perú.</p>
+                <div>
+                    <a href="categorias.html" class="btn btn-main px-4 me-2">Ver la Carta</a>
+                    <a href="#historia" class="btn btn-outline-light px-4">Conocer Más</a>
+                </div>
             </div>
         </section>
 
-        <!-- ── HISTORIA PRINCIPAL ── -->
-        <section class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-12 col-lg-6 fade-left">
-                    <div class="story-img rounded-4 shadow-lg overflow-hidden position-relative">
-                        <img src="../../assets/images/historia_familia.jpg" class="w-100" style="object-fit: cover;" alt="Familia fundadora de Little Doky's Hub">
-                        <span class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-3 fst-italic small" style="background: rgba(31,12,5,0.85); color: var(--color-accent); backdrop-filter: blur(4px); font-family: 'Playfair Display', serif;">
-                            <i class="bi bi-camera-fill me-1"></i> Nápoles — Lima, 1964
-                        </span>
+        <section class="container my-5" id="historia">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-md-6 fade-up">
+                    <div class="overflow-hidden rounded-4 shadow-sm">
+                        <img src="../../assets/images/historia_familia.jpg" class="img-fluid w-100 img-card"
+                            style="height: 320px;" alt="Familia fundadora">
                     </div>
                 </div>
-                <div class="col-12 col-lg-6 fade-right">
-                    <h2 class="fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">Donde Italia encontró al Perú</h2>
-                    <div class="mb-4" style="width: 60px; height: 4px; background: linear-gradient(to right, var(--color-primary), var(--color-accent)); border-radius: 2px;"></div>
-                    <p style="font-family: 'Inter', sans-serif; line-height: 1.8; color: #4a3a32;">
-                        Todo comenzó en <span class="fw-semibold" style="color: var(--color-primary);">1962</span>, cuando <span class="fw-semibold" style="color: var(--color-primary);">Giovanni Ferretti</span>, un joven pizzaiolo nacido en el barrio de Spaccanapoli, Nápoles, emprendió un viaje que cambiaría su destino. Con apenas una maleta, su receta de masa madre heredada de su nonna Carmela y un sueño incontenible, Giovanni cruzó el océano hasta llegar a Lima.
+                <div class="col-12 col-md-6 fade-up">
+                    <h2 class="fw-bold mb-3">Donde Italia encontró al Perú</h2>
+                    <p class="text-muted">
+                        Todo comenzó en 1962, cuando Giovanni Ferretti, un joven maestro pizzero de Nápoles, llegó al
+                        puerto del Callao trayendo consigo su más preciado tesoro: una receta familiar de masa madre y
+                        un profundo respeto por la fermentación lenta.
                     </p>
-                    <p style="font-family: 'Inter', sans-serif; line-height: 1.8; color: #4a3a32;">
-                        En el bullicioso mercado de Surquillo conoció a <span class="fw-semibold" style="color: var(--color-primary);">Rosa Quispe</span>, una vibrante cocinera ayacuchana cuyas manos transformaban ingredientes humildes en platos extraordinarios. Rosa le enseñó los secretos del ají amarillo, la aceituna botija y la chicha morada. Giovanni le mostró el arte de la masa fermentada y la salsa pomodoro napolitana. Juntos descubrieron que sus culturas, aparentemente lejanas, compartían un mismo idioma: el amor por la buena mesa.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── CITA DESTACADA ── -->
-        <section class="container fade-up">
-            <div class="rounded-end-4 p-4 p-md-5 mb-4" style="background: linear-gradient(135deg, rgba(181,57,25,0.08), rgba(230,161,75,0.08)); border-left: 5px solid var(--color-primary);">
-                <blockquote class="fst-italic fs-5 mb-2" style="font-family: 'Playfair Display', serif; color: var(--color-dark); line-height: 1.6;">
-                    "La mejor pizza no nace solo de una buena receta, nace del corazón de quien la prepara. Cada horno es un altar, cada masa un lienzo, cada ingrediente una historia que merece ser contada."
-                </blockquote>
-                <cite class="text-muted small" style="font-family: 'Inter', sans-serif; font-style: normal;">— Giovanni Ferretti, fundador, 1964</cite>
-            </div>
-        </section>
-
-        <!-- ── SEGUNDA PARTE DE LA HISTORIA ── -->
-        <section class="container py-5">
-            <div class="row align-items-center g-5">
-                <div class="col-12 col-lg-6 order-lg-2 fade-right">
-                    <div class="story-img rounded-4 shadow-lg overflow-hidden position-relative">
-                        <img src="../../assets/images/hero_detalles.jpg" class="w-100" style="object-fit: cover;" alt="Interior del horno de leña de Little Doky's Hub">
-                        <span class="position-absolute bottom-0 start-0 m-3 px-3 py-2 rounded-3 fst-italic small" style="background: rgba(31,12,5,0.85); color: var(--color-accent); backdrop-filter: blur(4px); font-family: 'Playfair Display', serif;">
-                            <i class="bi bi-fire me-1"></i> El horno original, restaurado
-                        </span>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-6 order-lg-1 fade-left">
-                    <h2 class="fw-bold mb-3" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">El nacimiento de una leyenda</h2>
-                    <div class="mb-4" style="width: 60px; height: 4px; background: linear-gradient(to right, var(--color-primary), var(--color-accent)); border-radius: 2px;"></div>
-                    <p style="font-family: 'Inter', sans-serif; line-height: 1.8; color: #4a3a32;">
-                        En <span class="fw-semibold" style="color: var(--color-primary);">1964</span>, Giovanni y Rosa abrieron un pequeño local en una esquina del Jirón de la Unión, con apenas cuatro mesas y un horno de barro construido por el propio Giovanni con ladrillos traídos de Lurín. Así nació la primera pizzería Ferretti-Quispe, donde la <span class="fw-semibold" style="color: var(--color-primary);">pizza a la leña napolitana</span> se servía junto a chicha morada casera.
-                    </p>
-                    <p style="font-family: 'Inter', sans-serif; line-height: 1.8; color: #4a3a32;">
-                        La fusión fue revolucionaria: la <span class="fw-semibold" style="color: var(--color-primary);">Pizza Lomo Saltado</span> — con tiras de lomo al wok, cebolla morada y un toque de sillao — se convirtió en un fenómeno que atrajo desde estudiantes universitarios hasta embajadores. La <span class="fw-semibold" style="color: var(--color-primary);">Pizza Ají de Gallina</span> conquistaba paladares que jamás imaginaron esa combinación.
-                    </p>
-                    <p style="font-family: 'Inter', sans-serif; line-height: 1.8; color: #4a3a32;">
-                        Décadas después, su nieto <span class="fw-semibold" style="color: var(--color-primary);">Mateo Ferretti Quispe</span> — a quien cariñosamente llaman "Doky" — decidió honrar el legado de sus abuelos reinventando la marca. En <span class="fw-semibold" style="color: var(--color-primary);">2022</span>, nació <span class="fw-semibold" style="color: var(--color-primary);">Little Doky's Hub</span>: un concepto moderno que respeta cada gramo de tradición familiar, desde la masa madre de 72 horas hasta la selección artesanal de ingredientes peruanos e italianos.
+                    <p class="text-muted">
+                        En Lima conoció a Rosa Quispe, cocinera ayacuchana experta en los secretos de los ajíes, las
+                        hierbas andinas y los productos de la tierra. Juntos descubrieron que el pomodoro italiano y la
+                        gastronomía peruana estaban destinados a encontrarse sobre una misma masa crocante.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- ── LÍNEA DE TIEMPO ── -->
         <section class="container my-5 fade-up">
-            <h2 class="text-center fw-bold mb-2" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">
-                Nuestra Línea del Tiempo
-            </h2>
-            <p class="text-center text-muted mb-5" style="font-family: 'Inter', sans-serif;">
-                Los momentos que definieron quiénes somos hoy.
-            </p>
+            <div class="card border-0 shadow-sm p-4 p-md-5 rounded-4 bg-white"
+                style="border-left: 5px solid var(--color-primary) !important;">
+                <blockquote class="fs-5 fst-italic mb-2 text-dark">
+                    "La pizza auténtica no requiere atajos; exige paciencia en el leudado, leña de verdad y el alma de
+                    quien la hornea cada noche."
+                </blockquote>
+                <figcaption class="text-muted small">— Familia Ferretti Quispe, fundadores</figcaption>
+            </div>
+        </section>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">1962</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">Giovanni llega al Perú</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Con su receta de masa madre napolitana, Giovanni Ferretti desembarca en el Callao con el sueño de compartir el sabor de Italia con el mundo.</p>
+        <section class="container my-5">
+            <h2 class="text-center fw-bold mb-4">Nuestros Pilares</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4 fade-up">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-4 text-center bg-white">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 text-white"
+                            style="width: 54px; height: 54px; background-color: var(--color-primary);">
+                            <i class="bi bi-fire fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Horno a la Leña</h5>
+                        <p class="text-muted small mb-0">Cocción tradicional a altas temperaturas que garantiza bordes
+                            aireados, crocantes y con el ahumado exacto.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">1963</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">El encuentro con Rosa</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">En el mercado de Surquillo, Giovanni conoce a Rosa Quispe. De ese encuentro nace no solo un amor, sino una revolución culinaria.</p>
+                <div class="col-12 col-md-4 fade-up">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-4 text-center bg-white">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 text-white"
+                            style="width: 54px; height: 54px; background-color: var(--color-primary);">
+                            <i class="bi bi-clock-history fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Fermentación de 72 Horas</h5>
+                        <p class="text-muted small mb-0">Nuestra masa madre madura lentamente para ser ligera, de fácil
+                            digestión y con una textura inigualable.</p>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">1964</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">Primera pizzería abierta</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Abren su primer local en el Jirón de la Unión con 4 mesas, un horno de barro artesanal y una carta que fusionaba dos mundos.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">1978</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">La Pizza Lomo Saltado</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Rosa crea la legendaria Pizza Lomo Saltado, que se convierte en el plato más pedido del local y un emblema de la fusión ítalo-peruana.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">1995</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">Segunda generación</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Marco Ferretti Quispe, hijo de Giovanni y Rosa, asume la cocina. Introduce las pizzas gourmet manteniendo la esencia familiar.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">2022</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">Nace Little Doky's Hub</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Mateo "Doky" Ferretti Quispe, nieto de los fundadores, reinventa la marca con un concepto moderno, delivery artesanal y nuevas creaciones de fusión.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content bg-white rounded-4 shadow p-4">
-                        <div class="fw-bold fs-4 mb-1" style="font-family: 'Playfair Display', serif; color: var(--color-primary);">2026</div>
-                        <div class="fw-bold mb-2" style="font-family: 'Playfair Display', serif;">El futuro es ahora</div>
-                        <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif; line-height: 1.65;">Con un nuevo local en Miraflores y presencia digital, Little Doky's Hub lleva la tradición familiar a una nueva generación de amantes de la pizza.</p>
+                <div class="col-12 col-md-4 fade-up">
+                    <div class="card h-100 shadow-sm border-0 rounded-4 p-4 text-center bg-white">
+                        <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 text-white"
+                            style="width: 54px; height: 54px; background-color: var(--color-primary);">
+                            <i class="bi bi-award fs-4"></i>
+                        </div>
+                        <h5 class="fw-bold">Ingredientes Seleccionados</h5>
+                        <p class="text-muted small mb-0">Quesos madurados de calidad, embutidos artesanales e insumos
+                            frescos del campo peruano.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ── NUESTROS VALORES ── -->
-        <section class="py-5 text-white" style="background: linear-gradient(135deg, var(--color-dark), #2d1810);">
-            <div class="container">
-                <h2 class="text-center fw-bold mb-5" style="font-family: 'Playfair Display', serif;">Lo Que Nos Define</h2>
-                <div class="row g-4">
-                    <div class="col-6 col-lg-3 fade-up">
-                        <div class="value-card text-center rounded-4 p-4 h-100" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fs-4" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                <i class="bi bi-heart-fill"></i>
-                            </div>
-                            <h5 class="fw-bold" style="font-family: 'Playfair Display', serif;">Tradición Familiar</h5>
-                            <p class="small opacity-75 mb-0" style="font-family: 'Inter', sans-serif;">Cada receta cuenta una historia de tres generaciones.</p>
-                        </div>
+        <section class="container my-5 fade-up" id="ubicacion">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden bg-white">
+                <div class="row g-0">
+                    <div class="col-12 col-lg-7">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2143!2d-77.0282!3d-12.1197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c83f4e6a4c5d%3A0x1234567890abcdef!2sMiraflores%2C+Lima!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
+                            class="w-100 h-100 border-0" style="min-height: 320px;" allowfullscreen=""
+                            loading="lazy"></iframe>
                     </div>
-                    <div class="col-6 col-lg-3 fade-up">
-                        <div class="value-card text-center rounded-4 p-4 h-100" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fs-4" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                <i class="bi bi-flower1"></i>
-                            </div>
-                            <h5 class="fw-bold" style="font-family: 'Playfair Display', serif;">Ingredientes Frescos</h5>
-                            <p class="small opacity-75 mb-0" style="font-family: 'Inter', sans-serif;">Seleccionamos a mano cada ingrediente del mercado local.</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 fade-up">
-                        <div class="value-card text-center rounded-4 p-4 h-100" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fs-4" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                <i class="bi bi-fire"></i>
-                            </div>
-                            <h5 class="fw-bold" style="font-family: 'Playfair Display', serif;">Horno de Leña</h5>
-                            <p class="small opacity-75 mb-0" style="font-family: 'Inter', sans-serif;">Cocción artesanal que realza el sabor natural de la masa.</p>
-                        </div>
-                    </div>
-                    <div class="col-6 col-lg-3 fade-up">
-                        <div class="value-card text-center rounded-4 p-4 h-100" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);">
-                            <div class="rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3 fs-4" style="width: 64px; height: 64px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                <i class="bi bi-globe-americas"></i>
-                            </div>
-                            <h5 class="fw-bold" style="font-family: 'Playfair Display', serif;">Fusión Cultural</h5>
-                            <p class="small opacity-75 mb-0" style="font-family: 'Inter', sans-serif;">El encuentro de dos cocinas milenarias: Italia y Perú.</p>
-                        </div>
+                    <div class="col-12 col-lg-5 p-4 d-flex flex-column justify-content-center">
+                        <h4 class="fw-bold mb-3">Encuéntranos</h4>
+                        <p class="text-muted small mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i>Calle Schell
+                            245, Miraflores, Lima</p>
+                        <p class="text-muted small mb-2"><i class="bi bi-clock-fill text-danger me-2"></i>Lunes a
+                            Domingo: 12:00 PM – 11:00 PM</p>
+                        <p class="text-muted small mb-3"><i class="bi bi-telephone-fill text-danger me-2"></i>+51 987
+                            654 321</p>
+                        <a href="categorias.html" class="btn btn-main btn-sm align-self-start">Explorar Menú</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- ── UBICACIÓN ── -->
-        <section class="container py-5" id="ubicacion">
-            <h2 class="text-center fw-bold mb-1" style="font-family: 'Playfair Display', serif; font-size: 2.2rem;">
-                <i class="bi bi-geo-alt-fill me-2" style="color: var(--color-primary);"></i>Encuéntranos
-            </h2>
-            <p class="text-center text-muted mb-5" style="font-family: 'Inter', sans-serif;">Visítanos en nuestro local de Miraflores y vive la experiencia Doky.</p>
-
-            <div class="bg-white rounded-4 shadow overflow-hidden fade-up">
-                <div class="position-relative" style="height: 350px;">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.2143!2d-77.0282!3d-12.1197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c83f4e6a4c5d%3A0x1234567890abcdef!2sMiraflores%2C+Lima!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe"
-                        class="w-100 h-100 border-0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                        title="Ubicación de Little Doky's Hub en Miraflores, Lima" style="filter: saturate(0.8) contrast(1.1);"></iframe>
-                </div>
-
-                <div class="p-4">
-                    <div class="row g-4">
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-start gap-3 mb-3">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                    <i class="bi bi-geo-alt-fill"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 small" style="font-family: 'Playfair Display', serif;">Dirección</h6>
-                                    <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif;">Calle Schell 245, Miraflores<br>Lima, Perú 15074</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                    <i class="bi bi-clock-fill"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 small" style="font-family: 'Playfair Display', serif;">Horario de Atención</h6>
-                                    <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif;">Lunes a Jueves: 12:00 – 22:00<br>Viernes a Domingo: 12:00 – 23:30</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="d-flex align-items-start gap-3 mb-3">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                    <i class="bi bi-telephone-fill"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 small" style="font-family: 'Playfair Display', serif;">Teléfono &amp; WhatsApp</h6>
-                                    <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif;">(01) 445-2871<br>+51 987 654 321</p>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-start gap-3">
-                                <div class="rounded-3 d-flex align-items-center justify-content-center text-white flex-shrink-0" style="width: 44px; height: 44px; background: linear-gradient(135deg, var(--color-primary), var(--color-accent));">
-                                    <i class="bi bi-truck"></i>
-                                </div>
-                                <div>
-                                    <h6 class="fw-bold mb-0 small" style="font-family: 'Playfair Display', serif;">Zona de Delivery</h6>
-                                    <p class="text-muted small mb-0" style="font-family: 'Inter', sans-serif;">Miraflores, San Isidro, Barranco,<br>Surquillo y Surco (radio 5 km)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ── CTA Final ── -->
-        <section class="container my-5 text-center fade-up">
-            <div class="text-white rounded-4 p-5 position-relative overflow-hidden" style="background: linear-gradient(135deg, var(--color-dark), var(--color-brown));">
-                <h3 class="fw-bold mb-3 position-relative" style="font-family: 'Playfair Display', serif; z-index: 2;">
-                    <i class="bi bi-fire me-2" style="color: var(--color-accent);"></i>¿Listo para probar nuestra historia?
-                </h3>
-                <p class="opacity-75 mx-auto mb-4 position-relative" style="font-family: 'Inter', sans-serif; z-index: 2; max-width: 500px;">
-                    Cada pizza que sale de nuestro horno lleva más de 60 años de tradición. Ordena ahora y sé parte de la familia Doky.
-                </p>
-                <div class="d-flex gap-3 justify-content-center flex-wrap position-relative" style="z-index: 2;">
-                    <a href="menu.html" class="btn btn-accent btn-lg px-5">
-                        <i class="bi bi-grid-3x3-gap me-2"></i>Ver Menú
-                    </a>
-                    <a href="categorias.html" class="btn btn-outline-light btn-lg px-5">
-                        <i class="bi bi-collection me-2"></i>Categorías
-                    </a>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- ── Modal Carrito ── -->
     <div class="modal fade" id="modalCarrito" tabindex="-1">
         <div class="modal-dialog modal-dialog-end m-0 h-100">
             <div class="modal-content h-100 rounded-0 border-0">
@@ -374,7 +212,7 @@
             <div class="row g-4">
                 <div class="col-12 col-md-4">
                     <img src="../../assets/images/logo.png" class="img-fluid" alt="Logo Footer"
-                        style="width: 80px; height: 80px;">
+                        style="width: 80px; height: 80px; object-fit: contain;">
                     <p class="small text-secondary">Pizzería artesanal comprometida con el buen sabor y entregas
                         rápidas.</p>
                     <div class="d-flex gap-3 fs-5">
@@ -410,8 +248,8 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../../assets/js/scroll.js"></script>
     <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/js/scroll.js"></script>
 </body>
 
 </html>
