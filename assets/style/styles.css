@@ -380,13 +380,29 @@ footer hr {
 }
 
 
+/* --- Tablet (768px o inferior) --- */
 @media (max-width: 768px) {
+    /* 2 tarjetas por fila */
+    .row > [class*="col-"] {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+    }
+
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0 !important;
+    }
+
     .auth-panel-right {
         border-left: none;
         border-top: 1px solid rgba(139, 76, 42, 0.1);
     }
 
-    .timeline::before {
+    .timeline::before,
+    .timeline-dot {
         left: 24px;
     }
 
@@ -395,12 +411,37 @@ footer hr {
         flex-direction: row;
         padding-left: 60px;
     }
-
-    .timeline-dot {
-        left: 24px;
-    }
-
+    
     .timeline-content {
         width: 100%;
+    }
+}
+
+/* --- Móvil (425px o inferior) --- */
+@media (max-width: 425px) {
+    .row > [class*="col-"] {
+        width: 100% !important;
+    }
+
+    .modal-dialog-end {
+        width: 100%;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(odd) {
+        padding-left: 45px;
+    }
+
+    .timeline::before,
+    .timeline-dot {
+        left: 14px;
+    }
+
+    footer .row > div {
+        text-align: center;
+    }
+
+    footer .d-flex.gap-3 {
+        justify-content: center;
     }
 }
