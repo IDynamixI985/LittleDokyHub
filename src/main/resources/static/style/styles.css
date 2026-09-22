@@ -1,0 +1,271 @@
+:root {
+    --color-primary: #B53919;   /* Rojo Teja */
+    --color-dark: #1F0C05;      /* Café muy oscuro */
+    --color-brown: #8B4C2A;     /* Marrón */
+    --color-cream: #EAD5CE;     /* Crema de fondo */
+    --color-accent: #E6A14B;    /* Mostaza/Dorado */
+}
+
+body {
+    background-color: var(--color-cream);
+    color: var(--color-dark);
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+header {
+    background-color: var(--color-dark);
+    border-bottom: 3px solid var(--color-primary);
+}
+
+.navbar-brand {
+    color: var(--color-accent) !important;
+}
+
+.btn-main {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn-main:hover {
+    background-color: #932a10;
+    color: #ffffff;
+}
+
+.btn-accent {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    font-weight: 600;
+}
+
+.btn-accent:hover {
+    background-color: #c98532;
+    color: var(--color-dark);
+}
+
+.link-custom {
+    color: var(--color-brown);
+    transition: color 0.2s;
+}
+
+.link-custom:hover {
+    color: var(--color-primary);
+}
+
+.banner-principal {
+    background: linear-gradient(rgba(31, 12, 5, 0.8), rgba(31, 12, 5, 0.8)),
+        url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80') center/cover;
+    color: #ffffff;
+}
+
+.img-card {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Tarjetas de pizzas unificadas */
+.card-pizza {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    background-color: #ffffff;
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card-pizza:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 32px rgba(31, 12, 5, 0.18) !important;
+}
+
+.card-pizza .img-card {
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.card-pizza:hover .img-card {
+    transform: scale(1.08);
+}
+
+.card-pizza .btn-main {
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.card-pizza .btn-main:active {
+    transform: scale(0.92);
+}
+
+/* Vistas de autenticación (Login / Registro) */
+.auth-wrapper {
+    background-color: var(--color-cream);
+    min-height: calc(100vh - 160px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1rem;
+}
+
+.card-auth,
+.card-register {
+    border: 1px solid rgba(139, 76, 42, 0.15);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(31, 12, 5, 0.08);
+    width: 100%;
+}
+
+.card-auth {
+    max-width: 960px;
+    overflow: hidden;
+}
+
+.card-register {
+    background-color: #ffffff;
+    max-width: 620px;
+}
+
+.auth-panel-left {
+    background-color: #ffffff;
+}
+
+.auth-panel-right {
+    background-color: #f3f2f2;
+    border-left: 1px solid rgba(139, 76, 42, 0.1);
+}
+
+.auth-title {
+    color: var(--color-dark);
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.bullet-icon {
+    color: var(--color-primary);
+    font-size: 1.2rem;
+    line-height: 1.1;
+}
+
+.form-control-custom {
+    background-color: #ffffff;
+    border: 1.5px solid #d9cbbe;
+    color: var(--color-dark);
+}
+
+.form-control-custom:focus {
+    background-color: #ffffff;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(181, 57, 25, 0.15);
+    color: var(--color-dark);
+}
+
+.form-check-input:checked {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(181, 57, 25, 0.15);
+}
+
+/* Modal Carrito lateral */
+.modal-dialog-end {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 360px;
+    max-width: 100%;
+}
+
+.modal.fade .modal-dialog-end {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog-end {
+    transform: translateX(0);
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-dark);
+    color: var(--color-cream);
+    border-top: 4px solid var(--color-brown);
+}
+
+footer a {
+    color: var(--color-accent);
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+footer hr {
+    border-color: var(--color-brown);
+}
+
+/* Animaciones al hacer scroll */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-up.visible,
+.fade-left.visible,
+.fade-right.visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .row > [class*="col-"] {
+        flex: 0 0 auto !important;
+        width: 50% !important;
+    }
+
+    .navbar-collapse {
+        padding: 1rem 0;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0 !important;
+    }
+
+    .auth-panel-right {
+        border-left: none;
+        border-top: 1px solid rgba(139, 76, 42, 0.1);
+    }
+}
+
+@media (max-width: 425px) {
+    .row > [class*="col-"] {
+        width: 100% !important;
+    }
+
+    .modal-dialog-end {
+        width: 100%;
+    }
+
+    footer .row > div {
+        text-align: center;
+    }
+
+    footer .d-flex.gap-3 {
+        justify-content: center;
+    }
+}
