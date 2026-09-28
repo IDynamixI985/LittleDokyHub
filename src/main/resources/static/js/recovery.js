@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     // Función auxiliar para mostrar el modal de notificación
     function mostrarModal(titulo, mensaje, urlRedireccion) {
         const modalElement = document.getElementById('modalNotificacion');
@@ -28,36 +29,29 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const emailVal = emailInput.value.trim().toLowerCase();
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
             const userPart = emailVal.split('@')[0] || '';
+
             if (userPart.length < 3 || !emailRegex.test(emailVal)) {
                 mostrarModal('Aviso', 'Por favor, ingresa un correo electrónico válido (mínimo 3 caracteres antes del @).', null);
                 emailInput.focus();
                 return;
             }
 
-            // Verificar si el correo realmente existe en los usuarios registrados de create.html
-            const usuarios = JSON.parse(localStorage.getItem('dokyUsuarios') || '[]');
-            const usuarioExiste = usuarios.some(u => u.email.toLowerCase() === emailVal);
-
-            if (!usuarioExiste) {
-                mostrarModal('Cuenta no encontrada', 'No existe ninguna cuenta registrada con este correo electrónico. Por favor, crea una cuenta primero.', null);
-                emailInput.focus();
-                return;
-            }
-
-            // Guardar el correo en sesión para saber a quién actualizarle la contraseña al final
+            // Guardar el correo en sesión
             sessionStorage.setItem('doky_recovery_email', emailVal);
 
-            // Generar código de 6 dígitos y guardarlo en la sesión para validarlo en el siguiente paso
+            // Generar código de 6 dígitos
             const codigoGenerado = Math.floor(100000 + Math.random() * 900000).toString();
             sessionStorage.setItem('doky_verify_code', codigoGenerado);
+
+            // Obtener la URL de destino (/verifycode)
+            const rutaDestino = forgotForm.getAttribute('action') || '/verifycode';
 
             // Mostrar modal de éxito
             mostrarModal(
                 '¡Código Generado!',
-                `Su código de verificación es: <strong>${codigoGenerado}</strong>.<br><br>Presione continuar para verificarlo.`,
-                forgotForm.getAttribute('action')
+                `Su código de verificación es: <strong class="fs-4 text-warning">${codigoGenerado}</strong>.<br><br>Presione continuar para verificarlo.`,
+                rutaDestino
             );
         });
     }
@@ -67,34 +61,35 @@ document.addEventListener('DOMContentLoaded', () => {
     if (verifyForm) {
         const codeInput = document.getElementById('codigo');
 
-        // Permitir solo números en el input
-        codeInput.addEventListener('input', function () {
-            this.value = this.value.replace(/[^0-9]/g, '');
-        });
+        if (codeInput) {
+            codeInput.addEventListener('input', function () {
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        }
 
         verifyForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            const codeVal = codeInput.value.trim();
+            const codeVal = codeInput ? codeInput.value.trim() : '';
             const codigoGuardado = sessionStorage.getItem('doky_verify_code');
 
             if (codeVal.length !== 6) {
                 mostrarModal('Código Inválido', 'El código debe tener exactamente 6 dígitos numéricos.', null);
-                codeInput.focus();
+                if (codeInput) codeInput.focus();
                 return;
             }
 
-            // Validación de autenticación real contra el código generado
             if (codigoGuardado && codeVal !== codigoGuardado) {
                 mostrarModal('Error de Verificación', 'El código ingresado es incorrecto. Por favor verifique e intente nuevamente.', null);
-                codeInput.focus();
+                if (codeInput) codeInput.focus();
                 return;
             }
 
-            // Modal de éxito
+            const rutaDestino = verifyForm.getAttribute('action') || '/resetpassword';
+
             mostrarModal(
                 '¡Verificación Exitosa!',
-                `El código puesto es correcto.<br>Ahora puede restablecer su contraseña.`,
-                verifyForm.getAttribute('action')
+                'El código ingresado es correcto.<br>Ahora puede restablecer su contraseña.',
+                rutaDestino
             );
         });
     }
@@ -132,28 +127,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Actualizar la contraseña en el localStorage para que el usuario pueda ingresar con ella en login.html
-            const emailRecuperacion = sessionStorage.getItem('doky_recovery_email');
-            const usuarios = JSON.parse(localStorage.getItem('dokyUsuarios') || '[]');
-            if (emailRecuperacion) {
-                const usuario = usuarios.find(u => u.email.toLowerCase() === emailRecuperacion.toLowerCase());
-                if (usuario) {
-                    usuario.password = passVal;
-                    localStorage.setItem('dokyUsuarios', JSON.stringify(usuarios));
-                }
-            }
-
-            // Limpiar datos temporales de la sesión
             sessionStorage.removeItem('doky_verify_code');
             sessionStorage.removeItem('doky_recovery_email');
 
-            // Modal de confirmación final
+            const rutaDestino = resetForm.getAttribute('action') || '/login';
+
             mostrarModal(
                 '¡Operación Exitosa!',
                 'Su contraseña ha sido cambiada correctamente.<br>Ya puede iniciar sesión con sus nuevas credenciales.',
-                resetForm.getAttribute('action')
+                rutaDestino
             );
         });
     }
-
 });

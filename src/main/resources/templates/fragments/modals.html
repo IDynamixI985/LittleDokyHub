@@ -59,6 +59,24 @@
         </div>
     </div>
 
+    <div th:fragment="modalNotificacion" class="modal fade" id="modalNotificacion" tabindex="-1"
+        aria-labelledby="modalNotificacionLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="modalNotificacionLabel">Notificación</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="modalNotificacionBody">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning fw-semibold px-4" id="btnModalContinuar"
+                        data-bs-dismiss="modal">Continuar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="modal fade" id="modalMensaje" tabindex="-1" th:fragment="modalMensaje">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
