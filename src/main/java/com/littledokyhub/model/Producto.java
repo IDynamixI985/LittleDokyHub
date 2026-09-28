@@ -1,20 +1,24 @@
 package com.littledokyhub.model;
 
 public class Producto {
+
     private Integer id;
     private String nombre;
     private String descripcion;
     private Double precio;
     private String imagenUrl;
+    private Categoria categoria;
 
-    public Producto() {}
+    public Producto() {
+    }
 
-    public Producto(Integer id, String nombre, String descripcion, Double precio, String imagenUrl) {
+    public Producto(Integer id, String nombre, String descripcion, Double precio, String imagenUrl, Categoria categoria) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         this.imagenUrl = imagenUrl;
+        this.categoria = categoria;
     }
 
     public Integer getId() { return id; }
@@ -31,4 +35,7 @@ public class Producto {
 
     public String getImagenUrl() { return imagenUrl; }
     public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
+
+    public Categoria getCategoria() { return categoria; }
+    public void setCategoria(Categoria categoria) { this.categoria = categoria; }
 }

@@ -1,9 +1,14 @@
 :root {
-    --color-primary: #B53919;   /* Rojo Teja */
-    --color-dark: #1F0C05;      /* Café muy oscuro */
-    --color-brown: #8B4C2A;     /* Marrón */
-    --color-cream: #EAD5CE;     /* Crema de fondo */
-    --color-accent: #E6A14B;    /* Mostaza/Dorado */
+    --color-primary: #B53919;
+    /* Rojo Teja */
+    --color-dark: #1F0C05;
+    /* Café muy oscuro */
+    --color-brown: #8B4C2A;
+    /* Marrón */
+    --color-cream: #EAD5CE;
+    /* Crema de fondo */
+    --color-accent: #E6A14B;
+    /* Mostaza/Dorado */
 }
 
 body {
@@ -68,8 +73,8 @@ header {
     border-radius: 16px;
     overflow: hidden;
     background-color: #ffffff;
-    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+        box-shadow 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .card-pizza:hover {
@@ -233,7 +238,7 @@ footer hr {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .row > [class*="col-"] {
+    .row>[class*="col-"] {
         flex: 0 0 auto !important;
         width: 50% !important;
     }
@@ -253,7 +258,7 @@ footer hr {
 }
 
 @media (max-width: 425px) {
-    .row > [class*="col-"] {
+    .row>[class*="col-"] {
         width: 100% !important;
     }
 
@@ -261,11 +266,170 @@ footer hr {
         width: 100%;
     }
 
-    footer .row > div {
+    footer .row>div {
         text-align: center;
     }
 
     footer .d-flex.gap-3 {
         justify-content: center;
+    }
+}
+
+/* ===================== PANEL DE ADMINISTRACIÓN ===================== */
+.admin-sidebar {
+    background-color: var(--color-dark);
+    color: var(--color-cream);
+    border-radius: 16px;
+    padding: 1.25rem 0.75rem;
+    position: sticky;
+    top: 110px;
+    box-shadow: 0 4px 14px rgba(31, 12, 5, 0.25);
+}
+
+.admin-profile {
+    padding-bottom: 1rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(234, 213, 206, 0.15);
+}
+
+.admin-avatar {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--color-primary);
+}
+
+.admin-muted {
+    color: rgba(234, 213, 206, 0.6);
+}
+
+.admin-menu a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.65rem 0.9rem;
+    margin-bottom: 0.15rem;
+    border-radius: 10px;
+    color: var(--color-cream);
+    text-decoration: none;
+    border-left: 3px solid transparent;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.admin-menu a:hover {
+    background-color: rgba(234, 213, 206, 0.1);
+    color: #ffffff;
+}
+
+.admin-menu a.active {
+    background-color: var(--color-primary);
+    border-left-color: var(--color-accent);
+    color: #ffffff;
+}
+
+.admin-menu .badge {
+    background-color: var(--color-accent);
+    color: var(--color-dark);
+}
+
+.admin-menu-sep {
+    height: 1px;
+    margin: 0.6rem 0.5rem;
+    background-color: rgba(234, 213, 206, 0.15);
+}
+
+/* Gráfico de barras */
+.admin-chart {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-around;
+    gap: 1rem;
+    height: 240px;
+}
+
+.admin-bar-col {
+    flex: 1;
+    max-width: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.admin-bar-track {
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.admin-bar {
+    width: 70%;
+    min-height: 4px;
+    border-radius: 8px 8px 0 0;
+    transition: height 0.4s ease;
+}
+
+.admin-bar-primary { background-color: var(--color-primary); }
+.admin-bar-accent { background-color: var(--color-accent); }
+.admin-bar-brown { background-color: var(--color-brown); }
+
+.admin-bar-value {
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.admin-bar-label {
+    margin-top: 0.4rem;
+    font-size: 0.85rem;
+    color: #6c757d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#resumen, #productos, #mensajes, #pedidos {
+    scroll-margin-top: 110px;
+}
+
+/* En móvil el menú lateral pasa a ser una barra horizontal */
+@media (max-width: 991.98px) {
+    .admin-sidebar {
+        position: static;
+        padding: 0.75rem;
+    }
+
+    .admin-profile {
+        display: none;
+    }
+
+    .admin-menu {
+        display: flex;
+        gap: 0.35rem;
+        overflow-x: auto;
+    }
+
+    .admin-menu li {
+        flex: 0 0 auto;
+    }
+
+    .admin-menu a {
+        white-space: nowrap;
+        border-left: none;
+        margin-bottom: 0;
+    }
+
+    .admin-menu-sep {
+        display: none;
     }
 }
