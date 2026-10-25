@@ -190,6 +190,7 @@ header {
     transform: translateX(0);
 }
 
+<<<<<<< HEAD
 .cart-modal-empty {
     padding: 2.5rem 1rem;
     color: #6c757d;
@@ -262,6 +263,8 @@ header {
     font-size: 0.875rem;
 }
 
+=======
+>>>>>>> main
 /* Footer */
 footer {
     background-color: var(--color-dark);
@@ -505,6 +508,7 @@ html {
         display: none;
     }
 }
+<<<<<<< HEAD
 
 /* Shared page elements */
 .site-logo {
@@ -953,3 +957,5 @@ html {
         align-items: stretch;
     }
 }
+=======
+>>>>>>> main
