@@ -96,7 +96,7 @@ public class CompraService {
         return candidato.getId();
     }
 
-    public record Linea(long id, int productoId, String nombre, String configuracion, int cantidad,
+    public record Linea(long id, int productoId, String nombre, String imagenUrl, String configuracion, int cantidad,
             BigDecimal precio, BigDecimal subtotal, boolean disponible) {}
 
     private List<Integer> ids(String config) {
@@ -146,7 +146,7 @@ public class CompraService {
             } catch (IllegalArgumentException e) {
                 disponible = false; desc = "Opciones no disponibles; elimina y vuelve a configurar";
             }
-            result.add(new Linea(item.getId(), p.getId(), p.getNombre(), desc, item.getCantidad(),
+            result.add(new Linea(item.getId(), p.getId(), p.getNombre(), p.getImagenUrl(), desc, item.getCantidad(),
                     unit, unit.multiply(BigDecimal.valueOf(item.getCantidad())), disponible));
         }
         return result;

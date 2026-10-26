@@ -16,7 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
             for (const item of cart.lineas) {
                 const article = document.createElement('article');
                 article.className = 'cart-modal-item';
+                const image = document.createElement('img');
+                image.className = 'cart-modal-image';
+                image.src = item.imagenUrl || '/images/logo.png';
+                image.alt = `Imagen de ${item.nombre}`;
+                image.onerror = () => { image.onerror = null; image.src = '/images/logo.png'; };
+
                 const detail = document.createElement('div');
+                detail.className = 'cart-modal-details';
                 const name = document.createElement('strong');
                 name.textContent = item.nombre;
                 const config = document.createElement('p');
@@ -25,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const subtotal = document.createElement('p');
                 subtotal.textContent = `${item.cantidad} unidad(es) · ${money(item.subtotal)}`;
                 detail.append(name, config, subtotal);
-                article.append(detail);
+                article.append(image, detail);
                 host.append(article);
             }
             document.getElementById('cartSubtotal').textContent = money(cart.total);
